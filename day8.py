@@ -78,10 +78,13 @@ def findPins(entry):
         number += patterns_map[output]
     return number
 
+def getSumOfAllEncodedNumbers(encodedLines):
+    sum = 0
+    for line in encodedLines:
+        sum += findPins(line)
+    return sum
+
 with open('inputs/day8.in') as f:
     lines = f.readlines()
     print(getUniqueNumbersCount(lines))
-    sum = 0
-    for line in lines:
-        sum += findPins(line)
-    print(sum)
+    print(getSumOfAllEncodedNumbers(lines))
